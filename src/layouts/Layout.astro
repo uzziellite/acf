@@ -1,0 +1,35 @@
+---
+import Header from "@components/Header.svelte"
+import Footer from "@components/Footer.svelte"
+
+const {title} = Astro.props
+const {description} = Astro.props
+const {og_image} = Astro.props
+const {og_url} = Astro.props
+---
+<html lang="en-KE">
+  <head>
+    <title>{title}</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+    <link rel="preconnect" href={import.meta.env.PUBLIC_CMS} crossorigin />
+    <meta name="robots" content="follow, index" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={og_image} />
+    <meta property="og:url" content={og_url} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); </style>
+  </head>
+  <body class="bg-gray-200">
+    <Header client:load />
+      <main>
+        <slot />
+      </main>
+    <Footer />
+  </body>
+</html>
