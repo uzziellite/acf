@@ -27,15 +27,15 @@
 <form on:submit|preventDefault={() => sendEmail()} class="flex flex-col py-6 space-y-6 p-4 md:px-6 bg-white">
 	<label class="block">
 		<span class="mb-1">Full name</span>
-		<input type="text" placeholder="Please enter your full name" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" bind:value={name}>
+		<input type="text" placeholder="Please enter your full name" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" required bind:value={name}>
 	</label>
 	<label class="block">
 		<span class="mb-1">Email address</span>
-		<input type="email" placeholder="Please enter your email address" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" bind:value={email}>
+		<input type="email" placeholder="Please enter your email address" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" required bind:value={email}>
 	</label>
 	<label class="block">
 		<span class="mb-1">Reason for contacting us today</span>
-		<textarea rows="3" class="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" bind:value={message}></textarea>
+		<textarea rows="3" class="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-gray-600 border-brown-600" required bind:value={message}></textarea>
 	</label>
 	{#if loading}
 		<button type="submit" class="px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 focus:ring-gray-600 hover:ring-gray-600 bg-teal-600 text-white">
