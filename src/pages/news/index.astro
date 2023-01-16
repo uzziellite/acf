@@ -2,33 +2,35 @@
 import Layout from '@layouts/Layout.astro'
 
 //Load News items
-const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=3&_embed&per_page=20&sort=desc`)
+const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=27&_embed&per_page=20&sort=desc`)
 const data = await res.json()
 ---
 
-<Layout title="Blog" description="">
-	<section class="h-[29em] w-full bg-cover" style="background-image: url('/images/impala.jpeg');">
-		<span class="bg-brown-600 h-full"></span>
-		<h1 class="text-white text-4xl md:text-6xl pt-64 text-center uppercase">
-			News
-		</h1>
+<Layout title="News" description="">
+	<section class="h-[28em] w-full relative bg-cover h-full relative" style="background-image: url('/images/grass.jpg');">
+		<div class="h-full bg-teal-600 bg-opacity-30"></div>
+		<div class="grid place-items-center place-content-center h-full">
+			<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+				News
+			</h1>
+		</div>
 	</section>
-	<section class="container max-w-6xl p-6 mx-auto mt-32">
-		<div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+	<section class="container p-4 mx-auto mt-2">
+		<div class="grid grid-cols-1 gap-x-2 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
 			{
 				data.map((item) => (
-					<a href={`/blog/${item.slug}`} class="max-w-sm mx-auto group hover:no-underline focus:no-underline">
+					<a href={`/news/${item.slug}`} class="mx-auto group hover:no-underline focus:no-underline bg-white p-4 shadow-xl">
 						<div class="relative">
-							<img role="presentation" class="object-cover w-full rounded h-44" src={item._embedded["wp:featuredmedia"] ? item._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url : ''} />
-							<p class="absolute bg-black bg-opacity-80 bottom-1 text-white p-2">
+							<img role="presentation" class="object-cover w-full h-56" src={item._embedded["wp:featuredmedia"] ? item._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url : ''} />
+							<!--<p class="absolute bg-black bg-opacity-80 bottom-1 text-white p-2">
 								Post written by: {item['_embedded'].author[0].name}
-							</p>
+							</p>-->
 						</div>
 						<div class="space-y-2">
-							<h3 class="text-2xl font-serif font-light group-hover:underline group-focus:underline">{item.title.rendered}</h3>
-							<span class="text-xs">{item.date_gmt}</span>
-							<span set:html={item.excerpt.rendered}></span>
+							<h3 class="text-2xl font-bold text-teal-600">{item.title.rendered}</h3>
+							<span class="prose" set:html={item.excerpt.rendered}></span>
 						</div>
+						<button class="bg-teal-600 p-2 text-white mt-2">Read More</button>
 					</a>
 				))
 			}

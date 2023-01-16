@@ -1,7 +1,56 @@
 ---
 import Layout from "@layouts/Layout.astro"
+
+//Load board members
+const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=28&_embed&sort=desc`)
+const data = await res.json()
 ---
 
 <Layout title="Board and Partners" description="The Africa Conservancy Foundation is a visionary organization, that is courageous and forthright when it comes to keeping and preserving wildlife in the regions of Africa.">
-	
+	<section class="h-[28em] relative bg-cover" style="background-image: url('/images/thicket.jpg');">
+		<div class="h-full bg-teal-600 bg-opacity-30">
+			<div class="grid place-items-center place-content-center h-full">
+				<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+					Board &amp; Partners
+				</h1>
+			</div>
+		</div>
+	</section>
+	<section class="container mx-auto rounded-lg p-4 mt-2 mb-2">
+		<h2 class="text-teal-600 text-4xl uppercase font-extrabold text-center">
+			Our Board Members
+		</h2>
+		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
+			{
+				data.map((item) => (
+					<div class="flex flex-col justify-center text-center bg-gray-100 shadow-lg p-2 rounded">
+						<img alt={item.title.rendered} class="self-center flex-shrink-0 w-32 h-32 mb-4 bg-center bg-cover rounded-full" src={item._embedded["wp:featuredmedia"][0].source_url} />
+						<p class="text-xl font-semibold leading-tight">
+							{item.title.rendered}
+						</p>
+						<div class="prose" set:html={item.excerpt.rendered}></div>
+						<a href={`/board/${item.slug}`} class="mt-2">
+							<button class="bg-teal-600 p-2 text-white">
+								Read More
+							</button>
+						</a>
+					</div>
+				))
+			}
+		</div>
+	</section>
+	<section class="container mx-auto rounded-lg p-4 mt-2 mb-2">
+		<h2 class="text-teal-600 text-4xl uppercase font-extrabold text-center my-2">
+			Our Partners
+		</h2>
+		<div class="flex flex-wrap justify-center lg:justify-between">
+			<!-- Partners loop here -->
+			<div class="bg-white p-2 shadow-md">
+				<a href="https://wildlifedirect.org/">
+					<img src="http://db1.africa-conservancy.org/wp-content/uploads/2023/01/wildlife-direct.png" class="aspect-video">
+				</a>
+			</div>
+			<!-- End Loop -->
+		</div>
+	</section>
 </Layout>

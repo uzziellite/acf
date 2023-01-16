@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro"
+
+//fetch projects
+const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=1&_embed&per_page=20&sort=desc`)
+const data = await res.json()
+---
+
+<Layout title="Our Projects" description="The Africa Conservancy Foundation is a visionary organization, that is courageous and forthright when it comes to keeping and preserving wildlife in the regions of Africa.">
+	<section class="h-[28em] relative bg-contain" style="background-image: url('/images/forest.jpg');">
+		<div class="h-full bg-teal-600 bg-opacity-30">
+			<div class="grid place-items-center place-content-center h-full">
+				<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+					Our Projects
+				</h1>
+			</div>
+		</div>
+	</section>
+	<section class="container mx-auto mt-4 mb-4 sm:p-4 lg:p-0">
+		{
+			data.map((item) => (
+				<div class="grid grid-cols-1 sm:gap-2 lg:gap-8 sm:grid-cols-2 lg:gap-0 my-4 bg-white shadow-md rounded sm:p-4 lg:p-0">
+		      <div class="relative h-72 overflow-hidden sm:h-80 lg:order-first lg:h-full">
+		        <img alt={item.title.rendered} src={item._embedded["wp:featuredmedia"][0].source_url} class="absolute inset-0 object-cover w-full h-72" />
+		      </div>
+
+		      <div class="text-brown-600 lg:pl-4 my-4">
+		        <h2 class="text-xl font-bold sm:text-2xl">
+		        	{item.title.rendered}
+		        </h2>
+
+		        <div class="prose mt-4" set:html={item.excerpt.rendered}></div>
+
+		        <a href={`/our-projects/${item.slug}`} class="mt-8 inline-flex items-center bg-teal-600 px-8 py-3 text-white">
+		          <span class="text-sm font-medium">
+		          	Learn More
+		          </span>
+		        </a>
+		      </div>
+		    </div>
+			))
+		}
+	</section>
+</Layout>

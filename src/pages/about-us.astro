@@ -2,6 +2,52 @@
 import Layout from "@layouts/Layout.astro"
 ---
 
-<Layout title="About Us" description="The Africa Conservancy Foundation is a visionary organization, that is courageous and forthright when it comes to keeping and preserving wildlife in the regions of Africa.">
-	
+<Layout title="About Us" description="">
+	<section class="h-[29em] w-full bg-cover relative" style="background-image: url('/images/kilimanjaro.jpg');">
+		<div class="h-full bg-teal-600 bg-opacity-50"></div>
+		<div class="grid place-items-center place-content-center h-full">
+			<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+				About Us
+			</h1>
+		</div>
+	</section>
+	<section class="container mx-auto bg-white shadow-md rounded-lg p-4 mt-2">
+		<p class="mt-4 text-4xl font-bold text-teal-600 leading-tight">
+			The African Conservancy Foundation (ACF) is an authentic African organisation that purchases and secures critical wildlife habitat.
+		</p>
+		<div class="grid sm:grid-cols-2 gap-4 divide-x">
+			<div class="mt-4">
+				<p class="sm:mt-4 text-lg">
+					ACF was the 1<sup>st</sup> Indigenous Kenyan NGO that led the effort to purchase and secure land for conservation.
+				</p>
+				<p class="sm:mt-4 text-lg">
+					We provide expertise in solving existing and emerging conservation problems in Kenya. Our work ensures sustainability of conservancies, supports and motivates public and private land owners to set aside land for conservation and invests in good land and wildlife management. 
+				</p>
+				<p class="text-brown-600 font-extrabold mt-4 text-2xl sm:mt-6">
+					Over the last two decades, conservancies have assumed a central role in the protection of wildlife habitats and biodiversity in Africa.
+				</p>
+			</div>
+			<div class="mt-4 place-items-center place-content-center">
+				<img src="/images/habitat.jpg" class="sm:pl-16 object-cover h-72">
+			</div>
+		</div>
+	</section>
+	<section class="container mx-auto bg-white shadow-md rounded-lg p-4 mt-2">
+		<h2 class="text-teal-600 text-4xl uppercase font-extrabold text-center">
+			What we do
+		</h2>
+		<p class="text-lg">ACF builds mutually beneficial relationships with landowners and investors to protect wildlife and habitats. We achieve this by leveraging our multi-disciplinary and extensive global experience in conservation and sustainable business practices. </p>
+	</section>
+	<section class="container mx-auto bg-white shadow-md rounded-lg p-4 mt-2 mb-2">
+		<h2 class="text-teal-600 text-4xl uppercase font-extrabold text-center">
+			Meet the founder
+		</h2>
+		<div class="grid sm:grid-cols-2 gap-4 divide-x place-items-center">
+			<p class="text-lg">
+				Michael is a visionary leader who believes in the conservation of wildlife. He founded this organization with the aim of achieving proper conservation for wildlife across Africa in order to prevent the extinction of wildlife species and habitats in the continent.
+			</p>
+			<img src="https://db1.africa-conservancy.org/wp-content/uploads/2018/03/MICHAEL-2X2-300x300.jpg" class=" sm:pl-48 rounded-lg">
+		</div>
+	</section>
+	<!-- Add a good video if one exists -->
 </Layout>
