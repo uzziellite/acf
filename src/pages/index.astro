@@ -93,13 +93,13 @@ const data = await res.json()
 	    })
 	  })
 	</script>
-	<section class="container mx-auto mt-4 bg-white shadow-md rounded-lg">
-		<div class="grid sm:grid-cols-2 gap-2 sm:gap-0 sm:divide-x place-content-center place-items-center p-4">
-			<div class="mt-4">
-				<h2 class="uppercase text-teal-600 text-4xl font-bold">
+	<section class="container mx-auto mt-4 rounded-lg">
+		<div class="grid sm:grid-cols-2 gap-2 sm:gap-0 sm:divide-x place-content-center place-items-center p-4 sm:p-0">
+			<div class="mt-4 bg-white shadow-md p-4">
+				<h2 class="uppercase text-teal-600 text-2xl font-bold">
 					Latest News
 				</h2>
-				<p class="text-lg text-brown-600">
+				<p class="block mt-6 text-lg text-brown-600">
 					For the latest news, happenings and announcements showcasing ACF’s work, please check out our news page. 
 				</p>
 				<a href="/news" class="block mt-6">
@@ -108,11 +108,11 @@ const data = await res.json()
 					</button>
 				</a>
 			</div>
-			<div class="mt-4 pl-4">
-				<h2 class="uppercase text-teal-600 text-4xl font-bold">
+			<div class="mt-4 md:pl-4 bg-white shadow-md p-4">
+				<h2 class="uppercase text-teal-600 text-2xl font-bold">
 					Contact Us
 				</h2>
-				<p class="text-lg text-brown-600">
+				<p class="block mt-6 text-lg text-brown-600">
 					Please reach out if you have any questions or would like more information. 
 				</p>
 				<a href="/contact-us" class="block mt-6">
@@ -124,10 +124,10 @@ const data = await res.json()
 		</div>
 	</section>
 	<section class="container mx-auto mt-4">
-		<h2 class="text-4xl mt-4 text-center text-teal-600 font-bold uppercase py-4">
+		<h2 class="text-2xl mt-4 text-center text-teal-600 font-bold uppercase py-4">
 			Our Achievements
 		</h2>
-		<div class="grid md:grid-cols-3 gap-4">
+		<div class="grid md:grid-cols-3 gap-6 p-4 sm:p-0">
 			<article class="flex flex-col bg-white shadow-md rounded-lg">
 				<img alt="" class="object-cover w-full h-52" src="/images/directors.jpg">
 				<div class="flex flex-col flex-1 p-6">
@@ -169,7 +169,7 @@ const data = await res.json()
 				</div>
 			</article>
 			<article class="flex flex-col bg-white shadow-md rounded-lg">
-				<img alt="" class="object-cover w-full h-52" src="http://db1.africa-conservancy.org/wp-content/uploads/2023/01/wildlife-direct.png">
+				<img alt="" class="object-cover w-full h-52" src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/WildLifeDirect-logo.png">
 				<div class="flex flex-col flex-1 p-6">
 					<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
 						We established a partnership agreement with the wildlife direct (NGO)
@@ -178,13 +178,13 @@ const data = await res.json()
 			</article>
 		</div>
 	</section>
-	<section class="container mx-auto mt-4 mb-4">
-		<h2 class="text-4xl mt-4 text-center text-teal-600 font-bold uppercase py-4">
+	<section class="container mx-auto mt-4 p-3 sm:p-0 mb-4">
+		<h2 class="text-2xl mt-4 text-center text-teal-600 font-bold uppercase py-4">
 			Our Projects
 		</h2>
 		{
 			data.map((item) => (
-				<div class="grid grid-cols-1 sm:gap-8 lg:grid-cols-2 lg:gap-0 my-4 bg-white shadow-md rounded">
+				<div class="grid grid-cols-1 sm:gap-8 lg:grid-cols-2 lg:gap-0 my-4 bg-white shadow-md rounded p-4 sm:p-0">
 		      <div class="relative h-72 overflow-hidden sm:h-80 lg:order-first lg:h-full">
 		        <img alt={item.title.rendered} src={item._embedded["wp:featuredmedia"][0].source_url} class="absolute inset-0 object-cover w-full h-72" />
 		      </div>

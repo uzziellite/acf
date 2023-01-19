@@ -1,7 +1,7 @@
 <footer class="px-4 divide-y bg-white mt-0">
   <div class="container py-10 mx-auto">
     <div class="grid sm:grid-cols-2 sm:gap-x-16">
-      <div class="">
+      <div class="mt-4 sm:mt-0">
         <h2 class="text-2xl font-extrabold text-brown-600 mb-4">
           Contact Us
         </h2>
@@ -18,7 +18,7 @@
           </span>
         </a>
       </div>
-      <div>
+      <div class="mt-4 sm:mt-0">
         <h2 class="text-2xl font-extrabold mb-4 text-brown-600">
           Support Us
         </h2>

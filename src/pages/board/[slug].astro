@@ -8,10 +8,10 @@ let post = await res.json()
 ---
 
 <Layout title={post[0].title.rendered} description="">
-	<h2 class="block relative text-4xl mt-12 text-center font-bold p-4 mt-24">
+	<h2 class="block relative text-2xl mt-12 text-center text-teal-600 p-4 mt-24 font-extrabold uppercase">
 		{post[0].title.rendered}
 	</h2>
 	<div class="grid place-items-center mt-6 mb-24 p-4">
-		<div class="prose prose-lg max-w-4xl" set:html={post[0].content.rendered}></div>
+		<div class="prose max-w-4xl grid place-items-center place-content-center" set:html={post[0].content.rendered}></div>
 	</div>
 </Layout>
