@@ -1,6 +1,7 @@
 ---
 import Header from "@components/Header.svelte"
 import Footer from "@components/Footer.svelte"
+import Top from "@components/Top.svelte"
 
 const {title} = Astro.props
 const {description} = Astro.props
@@ -25,11 +26,12 @@ const {og_url} = Astro.props
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style> @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); </style>
   </head>
-  <body class="bg-gray-200">
+  <body class="bg-gray-200 relative">
     <Header client:load />
       <main>
         <slot />
       </main>
     <Footer />
+    <Top client:load />
   </body>
 </html>
