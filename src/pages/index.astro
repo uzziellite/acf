@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro"
 
 //fetch projects
-const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=1&_embed&per_page=20&sort=desc`)
+const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?categories=1&_embed&per_page=2&sort=desc`)
 const data = await res.json()
 ---
 
@@ -10,11 +10,11 @@ const data = await res.json()
 	<div class="swiper-container !overflow-hidden">
   	<div class="swiper-wrapper">
     	<div class="swiper-slide">
-        <div class="bg-cover mt-2 sm:-mt-16 xl:mt-8 h-[33rem] relative" style={`background-image:url('/images/elephant.jpg')`}>
+        <div class="bg-cover sm:-mt-16 xl:mt-0 h-[30rem] relative" style={`background-image:url('/images/elephant.jpg')`}>
 					<div class="h-full bg-teal-600 bg-opacity-30"></div>
 					<div class="grid place-items-center place-content-center h-full">
-						<div class="absolute grid gap-6 px-2 pt-12 top-32 text-white overflow-x-hidden w-full">
-							<div class="p-2 md:p-20 lg:p-0 lg:pl-12 rounded-lg w-full">
+						<div class="absolute grid gap-6 px-2 pt-12 top-16 text-white overflow-x-hidden w-full">
+							<div class="p-2 md:p-20 lg:pt-0 lg:pl-12 rounded-lg w-full">
 								<h1 class="text-2xl md:text-3xl lg:text-5xl font-bold uppercase" data-swiper-parallax="-10000">
 				    			Our Vision
 				    		</h1>
@@ -31,10 +31,10 @@ const data = await res.json()
 				</div>
 	    </div>
 	    <div class="swiper-slide">
-        <div class="bg-cover mt-2 sm:-mt-16 xl:mt-8 h-[33rem] relative" style={`background-image:url('/images/giraffe.jpg')`}>
+        <div class="bg-cover sm:-mt-16 xl:mt-0 h-[30rem] relative" style={`background-image:url('/images/giraffe.jpg')`}>
 					<div class="h-full bg-teal-600 bg-opacity-50"></div>
 					<div class="grid place-items-center place-content-center h-full sm:ml-16">
-						<div class="absolute grid sm:grid-cols-2 px-2 pt-12 top-32 overflow-x-hidden w-full">
+						<div class="absolute grid sm:grid-cols-2 px-2 sm:pt-12 top-10 sm:top-20 overflow-x-hidden w-full">
 							<div class="p-2 md:p-20 lg:p-4 lg:pl-2 w-full bg-gray-600 bg-opacity-60">
 								<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-teal-600" data-swiper-parallax="-10000">
 				    			Our Aims
@@ -140,7 +140,7 @@ const data = await res.json()
 				<img alt="" class="object-cover w-full h-52" src="/images/wildlife.jpg">
 				<div class="flex flex-col flex-1 p-6">
 					<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
-						The wildlife habitat trust has been established
+						The Wildlife Habitat Trust has been established
 					</h3>
 				</div>
 			</article>
@@ -164,7 +164,7 @@ const data = await res.json()
 				<img alt="" class="object-cover w-full h-52" src="/images/protection.jpg">
 				<div class="flex flex-col flex-1 p-6">
 					<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
-						We established the very first environmental easement / wildlife protection order in Kenya
+						We established the very first environmental easement &amp; wildlife protection order in Kenya
 					</h3>
 				</div>
 			</article>
@@ -172,7 +172,7 @@ const data = await res.json()
 				<img alt="" class="object-cover w-full h-52" src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/WildLifeDirect-logo.png">
 				<div class="flex flex-col flex-1 p-6">
 					<h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
-						We established a partnership agreement with the wildlife direct (NGO)
+						We established a partnership agreement with the Wildlife Direct, WLD
 					</h3>
 				</div>
 			</article>

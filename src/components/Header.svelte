@@ -5,7 +5,7 @@
   const name = import.meta.env.PUBLIC_NAME
 </script>
 
-<div class="fixed w-full top-0 z-50 bg-white shadow-lg border-b-2 border-teal-600">
+<div class="bg-white shadow-lg border-b-2 border-teal-600">
   <div class="mx-auto max-w-7xl px-4 sm:px-6">
     <div class="flex items-center justify-between border-b-2 border-gray-100 py-1 lg:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
@@ -44,7 +44,7 @@
       From: "opacity-100 scale-100"
       To: "opacity-0 scale-95"
   -->
-  <div class={`absolute inset-x-0 top-0 origin-top-right transform p-2 transition ${mobileMenuActive ? '' : 'hidden'}`} use:clickOutside on:outclick={() => mobileMenuActive = false}>
+  <div class={`z-50 absolute inset-x-0 top-0 origin-top-right transform p-2 transition ${mobileMenuActive ? '' : 'hidden'}`} use:clickOutside on:outclick={() => mobileMenuActive = false}>
     <div class="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
       <div class="px-5 pt-5 pb-6">
         <div class="flex items-center justify-between">

@@ -10,7 +10,7 @@ const data = await res.json()
 	<section class="h-[28em] relative bg-cover" style="background-image: url('/images/thicket.jpg');">
 		<div class="h-full bg-teal-600 bg-opacity-30">
 			<div class="grid place-items-center place-content-center h-full">
-				<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+				<h1 class="absolute text-white text-4xl md:text-6xl top-48 text-center uppercase">
 					Board &amp; Partners
 				</h1>
 			</div>
@@ -28,7 +28,7 @@ const data = await res.json()
 						<p class="text-xl font-semibold leading-tight mt-6">
 							{item.title.rendered}
 						</p>
-						<div class="prose mt-6" set:html={item.excerpt.rendered}></div>
+						<div class="prose mt-6 text-left" set:html={item.excerpt.rendered}></div>
 						<a href={`/board/${item.slug}`} class="mt-6">
 							<button class="bg-teal-600 p-2 text-white">
 								Read More
@@ -49,6 +49,18 @@ const data = await res.json()
 				<!-- Let the images be 600 x 600 Pixels -->
 				<a href="https://wildlifedirect.org/">
 					<img src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/WildLifeDirect-logo.png" class="sm:h-36">
+				</a>
+			</div>
+			<div class="bg-white p-2 shadow-md">
+				<!-- Let the images be 600 x 600 Pixels -->
+				<a href="https://biglife.org/">
+					<img src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/blf.png" class="sm:h-36">
+				</a>
+			</div>
+			<div class="bg-white p-2 shadow-md">
+				<!-- Let the images be 600 x 600 Pixels -->
+				<a href="https://www.gamewatchers.com/">
+					<img src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/game-watchers.png" class="sm:h-36">
 				</a>
 			</div>
 			<!-- End Loop -->

@@ -11,7 +11,7 @@ let post = await res.json()
 	<section class="h-[28em] relative bg-cover" style={`background-image: url(\'${post[0]._embedded["wp:featuredmedia"][0].source_url}\');`}>
 		<div class="h-full bg-teal-600 bg-opacity-50">
 			<div class="grid place-items-center place-content-center h-full">
-				<h1 class="absolute text-white text-4xl md:text-6xl top-64 text-center uppercase">
+				<h1 class="absolute text-white text-4xl md:text-6xl top-48 text-center uppercase">
 					{post[0].title.rendered}
 				</h1>
 			</div>
