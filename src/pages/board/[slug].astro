@@ -7,7 +7,7 @@ let res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?slug=${s
 let post = await res.json()
 ---
 
-<Layout title={post[0].title.rendered} description="">
+<Layout title={post[0].title.rendered} description={post[0].excerpt.rendered} og_image={post[0]._embedded["wp:featuredmedia"][0].source_url} >
 	<h2 class="block relative text-2xl mt-12 text-center text-teal-600 p-4 mt-24 font-extrabold uppercase">
 		{post[0].title.rendered}
 	</h2>
