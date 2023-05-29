@@ -6,7 +6,7 @@ const res = await fetch(`${import.meta.env.PUBLIC_CMS}wp-json/wp/v2/posts?catego
 const data = await res.json()
 ---
 
-<Layout title="Board and Partners" description="The Africa Conservancy Foundation is a visionary organization, that is courageous and forthright when it comes to keeping and preserving wildlife in the regions of Africa.">
+<Layout title="Board and Partners - The Africa Conservancy Foundation" description="The Africa Conservancy Foundation is a visionary organization, that is courageous and forthright when it comes to keeping and preserving wildlife in the regions of Africa.">
 	<section class="h-[20em] relative bg-cover" style="background-image: url('/images/thicket.jpg');">
 		<div class="h-full bg-black bg-opacity-30">
 			<div class="grid place-items-center place-content-center h-full">
@@ -43,7 +43,7 @@ const data = await res.json()
 		<h2 class="text-teal-600 text-2xl uppercase font-extrabold text-center my-2">
 			Our Partners
 		</h2>
-		<div class="flex flex-wrap justify-center space-y-6 sm:space-y-0 lg:justify-between">
+		<div class="flex flex-wrap justify-center space-y-6 lg:justify-between">
 			<!-- Partners loop here -->
 			<div class="bg-white p-2 shadow-md">
 				<!-- Let the images be 600 x 600 Pixels -->
@@ -61,6 +61,12 @@ const data = await res.json()
 				<!-- Let the images be 600 x 600 Pixels -->
 				<a href="https://www.gamewatchers.com/">
 					<img src="https://db1.africa-conservancy.org/wp-content/uploads/2023/01/game-watchers.png" class="sm:h-36">
+				</a>
+			</div>
+			<div class="shadow-md">
+				<!-- Let the images be 600 x 600 Pixels -->
+				<a href="https://www.quickresponsefund.org/">
+					<img src="https://db1.africa-conservancy.org/wp-content/uploads/2023/05/qrf-logo.png" class="sm:h-36">
 				</a>
 			</div>
 			<!-- End Loop -->
